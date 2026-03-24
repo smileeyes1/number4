@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مغامرة الضرب في أربعة - رحلة الجواهر الأربعة</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(to bottom, #90EE90, #FFD700); text-align: center; margin: 0; padding: 20px; color: #000; }
+        h1 { color: #228B22; font-size: ٣٢px; }
+        h2 { color: #006400; }
+        .castle { font-size: ٨٠px; margin: ٢٠px; }
+        table { margin: ٢٠px auto; border-collapse: collapse; background: white; box-shadow: ٠ ٠ ١٥px rgba(٠,٠,٠,٠.٢); }
+        th, td { border: ٣px solid #228B22; padding: ١٥px; font-size: ٢٤px; }
+        th { background: #90EE90; }
+        button { background: #FF4500; color: white; border: none; padding: ١٥px ٣٠px; margin: ١٠px; font-size: ٢٠px; border-radius: ١٠px; cursor: pointer; }
+        .story { background: #FFF8DC; padding: ٢٠px; margin: ٢٠px auto; max-width: ٦٠٠px; border-radius: ١٥px; box-shadow: ٠ ٠ ١٠px rgba(٠,٠,٠,٠.١); }
+        #gems { font-size: ٥٠px; margin: ٢٠px; }
+    </style>
+</head>
+<body>
+    <h1>مغامرة الضرب في أربعة</h1>
+    <h2>رحلة الجواهر الأربعة</h2>
+    
+    <div class="castle">🏰 🏰 🏰 🏰</div>
+    <h2>قصر جدول الضرب في ٤</h2>
+    <table>
+        <tr><th>العدد</th><th>×</th><th>٤</th><th>=</th><th>الناتج</th></tr>
+        <tr><td>١</td><td>×</td><td>٤</td><td>=</td><td>٤</td></tr>
+        <tr><td>٢</td><td>×</td><td>٤</td><td>=</td><td>٨</td></tr>
+        <tr><td>٣</td><td>×</td><td>٤</td><td>=</td><td>١٢</td></tr>
+        <tr><td>٤</td><td>×</td><td>٤</td><td>=</td><td>١٦</td></tr>
+        <tr><td>٥</td><td>×</td><td>٤</td><td>=</td><td>٢٠</td></tr>
+        <tr><td>٦</td><td>×</td><td>٤</td><td>=</td><td>٢٤</td></tr>
+        <tr><td>٧</td><td>×</td><td>٤</td><td>=</td><td>٢٨</td></tr>
+        <tr><td>٨</td><td>×</td><td>٤</td><td>=</td><td>٣٢</td></tr>
+        <tr><td>٩</td><td>×</td><td>٤</td><td>=</td><td>٣٦</td></tr>
+        <tr><td>١٠</td><td>×</td><td>٤</td><td>=</td><td>٤٠</td></tr>
+    </table>
+
+    <div class="story">
+        <h2>جسر الجمع المتكرر</h2>
+        <p>الضرب في ٤ يعني جمع العدد أربع مرات</p>
+        <p>مثال: ٣ × ٤ = ٣ + ٣ + ٣ + ٣ = ١٢</p>
+    </div>
+
+    <div class="story">
+        <h2>حديقة القصص من فلسطين</h2>
+        <p>في سوق نابلس: اشترى تاجر ٧ أكياس زيتون، كل كيس ٤ كيلو → ٧ × ٤ = ٢٨ كيلو</p>
+        <p>في مزرعة جنين: ٥ أشجار تفاح، كل شجرة أعطت ٤ سلال → ٥ × ٤ = ٢٠ سلة</p>
+        <p>في مدرستنا: ٨ طلاب، كل طالب يحمل ٤ كتب → ٨ × ٤ = ٣٢ كتاب</p>
+    </div>
+
+    <h2>اجمع ٤ جواهر لتنتصر وتفتح الكنز!</h2>
+    <div id="gems">💎 💎 💎 💎</div>
+    <button onclick="startChallenge()">ابدأ التحديات الآن</button>
+
+    <script>
+        let gems = ٠;
+        function startChallenge() {
+            const questions = [
+                {q: "ما هو ٩ × ٤ ؟", a: "٣٦"},
+                {q: "٦ × ٤ = ؟", a: "٢٤"},
+                {q: "٧ أكياس × ٤ كيلو = كم كيلو؟", a: "٢٨"},
+                {q: "٥ × ٤ = ؟", a: "٢٠"}
+            ];
+            let correct = ٠;
+            for (let i = ٠; i < questions.length; i++) {
+                let ans = prompt(questions[i].q);
+                if (ans === questions[i].a || ans === questions[i].a.replace(/٠/g,'0').replace(/١/g,'1')... ) {  // يقبل أرقام عربية أو غربية
+                    correct++;
+                    gems++;
+                    document.getElementById("gems").innerHTML += " 💎";
+                }
+            }
+            if (gems >= ٤) {
+                alert("مبروك يا بطل! جمعت ٤ جواهر وفتحت الكنز 🏆");
+            } else {
+                alert("أحسنت! حصلت على " + gems + " جواهر. حاول مرة أخرى لتكمل ٤");
+            }
+        }
+    </script>
+</body>
+</html>
