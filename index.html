@@ -2,18 +2,56 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مغامرة الضرب في أربعة - رحلة الجواهر الأربعة</title>
     <style>
-        body { font-family: Arial, sans-serif; background: linear-gradient(to bottom, #90EE90, #FFD700); text-align: center; margin: 0; padding: 20px; color: #000; }
-        h1 { color: #228B22; font-size: ٣٢px; }
-        h2 { color: #006400; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(to bottom, #90EE90, #FFD700, #90EE90); 
+            text-align: center; 
+            margin: 0; 
+            padding: 20px; 
+            color: #000; 
+        }
+        h1 { color: #006400; font-size: ٣٢px; margin: ١٠px; }
+        h2 { color: #228B22; }
         .castle { font-size: ٨٠px; margin: ٢٠px; }
-        table { margin: ٢٠px auto; border-collapse: collapse; background: white; box-shadow: ٠ ٠ ١٥px rgba(٠,٠,٠,٠.٢); }
-        th, td { border: ٣px solid #228B22; padding: ١٥px; font-size: ٢٤px; }
+        table { 
+            margin: ٢٠px auto; 
+            border-collapse: collapse; 
+            background: white; 
+            box-shadow: ٠ ٠ ١٥px rgba(٠,٠,٠,٠.٣); 
+            width: ٩٠%; 
+            max-width: ٦٠٠px; 
+        }
+        th, td { 
+            border: ٣px solid #228B22; 
+            padding: ١٥px; 
+            font-size: ٢٤px; 
+        }
         th { background: #90EE90; }
-        button { background: #FF4500; color: white; border: none; padding: ١٥px ٣٠px; margin: ١٠px; font-size: ٢٠px; border-radius: ١٠px; cursor: pointer; }
-        .story { background: #FFF8DC; padding: ٢٠px; margin: ٢٠px auto; max-width: ٦٠٠px; border-radius: ١٥px; box-shadow: ٠ ٠ ١٠px rgba(٠,٠,٠,٠.١); }
-        #gems { font-size: ٥٠px; margin: ٢٠px; }
+        button { 
+            background: #FF4500; 
+            color: white; 
+            border: none; 
+            padding: ١٨px ٤٠px; 
+            margin: ٢٠px; 
+            font-size: ٢٢px; 
+            border-radius: ١٥px; 
+            cursor: pointer; 
+        }
+        button:hover { background: #FF0000; }
+        .story { 
+            background: #FFF8DC; 
+            padding: ٢٥px; 
+            margin: ٢٠px auto; 
+            max-width: ٧٠٠px; 
+            border-radius: ١٥px; 
+            box-shadow: ٠ ٠ ١٠px rgba(٠,٠,٠,٠.١); 
+            font-size: ٢٠px; 
+        }
+        #gems { font-size: ٦٠px; margin: ٣٠px; letter-spacing: ١٠px; }
+        .message { font-size: ٢٨px; color: #006400; margin: ٢٠px; }
     </style>
 </head>
 <body>
@@ -22,6 +60,7 @@
     
     <div class="castle">🏰 🏰 🏰 🏰</div>
     <h2>قصر جدول الضرب في ٤</h2>
+    
     <table>
         <tr><th>العدد</th><th>×</th><th>٤</th><th>=</th><th>الناتج</th></tr>
         <tr><td>١</td><td>×</td><td>٤</td><td>=</td><td>٤</td></tr>
@@ -39,42 +78,59 @@
     <div class="story">
         <h2>جسر الجمع المتكرر</h2>
         <p>الضرب في ٤ يعني جمع العدد أربع مرات</p>
-        <p>مثال: ٣ × ٤ = ٣ + ٣ + ٣ + ٣ = ١٢</p>
+        <p>مثال: ٣ + ٣ + ٣ + ٣ = ١٢</p>
     </div>
 
     <div class="story">
         <h2>حديقة القصص من فلسطين</h2>
-        <p>في سوق نابلس: اشترى تاجر ٧ أكياس زيتون، كل كيس ٤ كيلو → ٧ × ٤ = ٢٨ كيلو</p>
-        <p>في مزرعة جنين: ٥ أشجار تفاح، كل شجرة أعطت ٤ سلال → ٥ × ٤ = ٢٠ سلة</p>
-        <p>في مدرستنا: ٨ طلاب، كل طالب يحمل ٤ كتب → ٨ × ٤ = ٣٢ كتاب</p>
+        <p>في سوق نابلس: اشترى تاجر ٧ أكياس زيتون، كل كيس ٤ كيلو → ٢٨ كيلو</p>
+        <p>في مزرعة جنين: ٥ أشجار تفاح، كل شجرة أعطت ٤ سلال → ٢٠ سلة</p>
+        <p>في مدرستنا: ٨ طلاب، كل طالب يحمل ٤ كتب → ٣٢ كتاب</p>
     </div>
 
     <h2>اجمع ٤ جواهر لتنتصر وتفتح الكنز!</h2>
     <div id="gems">💎 💎 💎 💎</div>
-    <button onclick="startChallenge()">ابدأ التحديات الآن</button>
+    <button onclick="startChallenges()">ابدأ التحديات الآن</button>
+    
+    <div id="message" class="message"></div>
 
     <script>
-        let gems = ٠;
-        function startChallenge() {
-            const questions = [
-                {q: "ما هو ٩ × ٤ ؟", a: "٣٦"},
-                {q: "٦ × ٤ = ؟", a: "٢٤"},
-                {q: "٧ أكياس × ٤ كيلو = كم كيلو؟", a: "٢٨"},
-                {q: "٥ × ٤ = ؟", a: "٢٠"}
+        let gemsCollected = ٠;
+
+        function startChallenges() {
+            const challenges = [
+                { question: "ما هو ٩ × ٤ ؟", answer: "٣٦" },
+                { question: "٦ × ٤ = ؟", answer: "٢٤" },
+                { question: "٧ أكياس زيتون × ٤ كيلو = كم كيلو؟", answer: "٢٨" },
+                { question: "٥ أشجار × ٤ سلال = كم سلة؟", answer: "٢٠" },
+                { question: "٨ طلاب × ٤ كتب = كم كتاب؟", answer: "٣٢" }
             ];
-            let correct = ٠;
-            for (let i = ٠; i < questions.length; i++) {
-                let ans = prompt(questions[i].q);
-                if (ans === questions[i].a || ans === questions[i].a.replace(/٠/g,'0').replace(/١/g,'1')... ) {  // يقبل أرقام عربية أو غربية
-                    correct++;
-                    gems++;
-                    document.getElementById("gems").innerHTML += " 💎";
+
+            let correctAnswers = ٠;
+            let messageDiv = document.getElementById("message");
+
+            for (let i = ٠; i < challenges.length; i++) {
+                let userAnswer = prompt(challenges[i].question + "\nاكتب الإجابة بالأرقام العربية");
+                
+                if (userAnswer === challenges[i].answer) {
+                    correctAnswers++;
+                    gemsCollected++;
                 }
             }
-            if (gems >= ٤) {
-                alert("مبروك يا بطل! جمعت ٤ جواهر وفتحت الكنز 🏆");
+
+            // تحديث الجواهر
+            let gemsDisplay = "";
+            for (let i = ٠; i < ٤; i++) {
+                gemsDisplay += (i < gemsCollected) ? "💎 " : "⚪ ";
+            }
+            document.getElementById("gems").innerHTML = gemsDisplay;
+
+            if (gemsCollected >= ٤) {
+                messageDiv.innerHTML = "مبروك يا بطل! جمعت ٤ جواهر وفتحت الكنز 🏆<br>أنت فزت في المغامرة!";
+                messageDiv.style.color = "#006400";
             } else {
-                alert("أحسنت! حصلت على " + gems + " جواهر. حاول مرة أخرى لتكمل ٤");
+                messageDiv.innerHTML = "أحسنت! حصلت على " + gemsCollected + " جواهر. حاول مرة أخرى لتكمل ٤ جواهر";
+                messageDiv.style.color = "#FF4500";
             }
         }
     </script>
