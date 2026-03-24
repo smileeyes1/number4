@@ -51,7 +51,7 @@
             font-size: ٢٠px; 
         }
         #gems { font-size: ٦٠px; margin: ٣٠px; letter-spacing: ١٠px; }
-        .message { font-size: ٢٨px; color: #006400; margin: ٢٠px; }
+        #message { font-size: ٢٨px; margin: ٢٠px; }
     </style>
 </head>
 <body>
@@ -92,45 +92,43 @@
     <div id="gems">💎 💎 💎 💎</div>
     <button onclick="startChallenges()">ابدأ التحديات الآن</button>
     
-    <div id="message" class="message"></div>
+    <div id="message"></div>
 
     <script>
         let gemsCollected = ٠;
 
         function startChallenges() {
             const challenges = [
-                { question: "ما هو ٩ × ٤ ؟", answer: "٣٦" },
-                { question: "٦ × ٤ = ؟", answer: "٢٤" },
-                { question: "٧ أكياس زيتون × ٤ كيلو = كم كيلو؟", answer: "٢٨" },
-                { question: "٥ أشجار × ٤ سلال = كم سلة؟", answer: "٢٠" },
-                { question: "٨ طلاب × ٤ كتب = كم كتاب؟", answer: "٣٢" }
+                { q: "ما هو ٩ × ٤ ؟", a: "٣٦" },
+                { q: "٦ × ٤ = ؟", a: "٢٤" },
+                { q: "٧ أكياس × ٤ كيلو = كم كيلو؟", a: "٢٨" },
+                { q: "٥ أشجار × ٤ سلال = كم سلة؟", a: "٢٠" },
+                { q: "٨ طلاب × ٤ كتب = كم كتاب؟", a: "٣٢" }
             ];
 
-            let correctAnswers = ٠;
-            let messageDiv = document.getElementById("message");
-
+            let correct = ٠;
             for (let i = ٠; i < challenges.length; i++) {
-                let userAnswer = prompt(challenges[i].question + "\nاكتب الإجابة بالأرقام العربية");
-                
-                if (userAnswer === challenges[i].answer) {
-                    correctAnswers++;
+                let answer = prompt(challenges[i].q);
+                if (answer === challenges[i].a) {
+                    correct++;
                     gemsCollected++;
                 }
             }
 
-            // تحديث الجواهر
-            let gemsDisplay = "";
+            // تحديث عرض الجواهر
+            let display = "";
             for (let i = ٠; i < ٤; i++) {
-                gemsDisplay += (i < gemsCollected) ? "💎 " : "⚪ ";
+                display += (i < gemsCollected) ? "💎 " : "⚪ ";
             }
-            document.getElementById("gems").innerHTML = gemsDisplay;
+            document.getElementById("gems").innerHTML = display;
 
+            let msg = document.getElementById("message");
             if (gemsCollected >= ٤) {
-                messageDiv.innerHTML = "مبروك يا بطل! جمعت ٤ جواهر وفتحت الكنز 🏆<br>أنت فزت في المغامرة!";
-                messageDiv.style.color = "#006400";
+                msg.innerHTML = "مبروك يا بطل! جمعت ٤ جواهر وفتحت الكنز 🏆";
+                msg.style.color = "#006400";
             } else {
-                messageDiv.innerHTML = "أحسنت! حصلت على " + gemsCollected + " جواهر. حاول مرة أخرى لتكمل ٤ جواهر";
-                messageDiv.style.color = "#FF4500";
+                msg.innerHTML = "أحسنت! حصلت على " + gemsCollected + " جواهر. حاول مرة أخرى";
+                msg.style.color = "#FF4500";
             }
         }
     </script>
